@@ -3,8 +3,8 @@ class CreateProperties < ActiveRecord::Migration[6.1]
     create_table :properties do |t|
       t.string :property_name
       t.string :location
-      t.string :description
-      t.string :image
+      t.text :description
+      t.string :image, array: true   
 
       t.timestamps
     end

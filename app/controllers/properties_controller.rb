@@ -4,6 +4,21 @@ class PropertiesController < ApplicationController
   # GET /properties or /properties.json
   def index
     @properties = Property.all
+    base64_image =
+
+    File.open("app/image_uploads/IMG_9215.jpg", "rb") do |file|
+        # why strict_encode64
+        # https://ruby-doc.org/stdlib-2.3.1/libdoc/base64/rdoc/Base64.html#method-i-strict_encode64
+        Base64.strict_encode64(file.read)
+        end
+    image =
+# need to get image to show 
+        File.open("app/image_uploads/IMG_9215.jpg", "rb") do |file|
+            # why strict_encode64
+            # https://ruby-doc.org/stdlib-2.3.1/libdoc/base64/rdoc/Base64.html#method-i-strict_encode64
+            file.read
+            end
+          img64= Base64.strict_encode64(image)
   end
 
   # GET /properties/1 or /properties/1.json
