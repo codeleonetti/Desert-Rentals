@@ -1,3 +1,4 @@
+#TEST
 # was test sit to get pics to return
 # require "base64"
 # class EncoderTestController < ApplicationController
